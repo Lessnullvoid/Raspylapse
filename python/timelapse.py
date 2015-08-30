@@ -42,8 +42,6 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
 
     timelapseDir = "/home/user/path/to/Raspylapse/generated_images"
 
-    # en mi compu: /home/furenku/chamba/less/raspgif/Raspylapse/generated_images
-
     if not os.path.isdir(timelapseDir):
         os.mkdir(timelapseDir)
 
@@ -61,9 +59,9 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
                 return
 
     print "Time-lapse begin! : Take a picture every %s seconds, for %s hours.  That's %s pictures!"%(interval, captureTime, totalPics)
-    
+
     imagesGenerated = 0
-    
+
     os.system("convert generated_images/*.jpeg -delay 20 -loop 0 html/gif/timelapse.gif")
 
     try:
@@ -81,7 +79,7 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
                 time.sleep(interval)
                 timeNow = time.time()
                 elapsedTime = timeNow - startT
-                
+
                 imagesGenerated=imagesGenerated+1
 
                 if imagesGenerated % 5 == 0 :
@@ -97,7 +95,7 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
         print "Capture exited early..."
         return
 
-    
+
     print "Capture complete!"
 
 # If executed from the command line:
