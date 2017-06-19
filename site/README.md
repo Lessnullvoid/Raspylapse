@@ -8,7 +8,7 @@
 
 Install Image Magick
 
-`sudo apt-get install imagemagick
+sudo apt-get install imagemagick
 
 
 ###Set-up
