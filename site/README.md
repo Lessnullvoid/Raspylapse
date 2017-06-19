@@ -15,7 +15,7 @@ Install Image Magick
 
 1. Clone repo
 
-	`git clone https://github.com/furenku/Raspylapse.git`
+	`https://github.com/Lessnullvoid/Raspylapse.git`
 
 
 2. Enter project
