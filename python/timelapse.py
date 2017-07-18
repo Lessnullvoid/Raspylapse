@@ -44,10 +44,10 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
     interval = float(captureTimeSec) / movieFrames
     totalPics = int(captureTimeSec / interval)
 
-    timelapseDir = "/mnt/usbstorage/"
+    timelapseDir = "/mnt/usbstorage/%stimelapse{timestamp}"
 
     if not os.path.isdir(timelapseDir):
-        os.mkdirs(today.strftime("%Y/%m/%d"))
+        os.mkdir(timelapseDir)
 
     print len([name for name in os.listdir(timelapseDir) if os.path.isfile(os.path.join(timelapseDir, name))])
 
