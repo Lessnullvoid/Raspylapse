@@ -1,6 +1,6 @@
 #!/user/bin/env python
 
-from os import mkdir
+from os 
 import time
 import picamera
 import datetime
