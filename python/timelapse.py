@@ -10,7 +10,7 @@ import argparse
 #imagenes en png
 #
 
-def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720),
+def main(captureTime=3600.0, movieDuration=30, framerate=30, resolution=(1280,720),
         quality=85, startTime=None):
     """
     Record jpeg images to a /time-lapse folder based on the captureTime and movieDuration
@@ -72,7 +72,7 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
         with picamera.PiCamera() as camera:
             print "Starting camera..."
             camera.resolution = resolution
-            if format == 'jpeg':
+            if format == 'png':
                 camera.quality = quality
             camera.start_preview()
             time.sleep(2)
