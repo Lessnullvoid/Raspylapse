@@ -1,6 +1,6 @@
 #!/user/bin/env python
 
-import os
+from os import mkdir
 import time
 import picamera
 import datetime
@@ -44,7 +44,7 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
     interval = float(captureTimeSec) / movieFrames
     totalPics = int(captureTimeSec / interval)
 
-    timelapseDir = "/mnt/usbstorage"
+    timelapseDir = "/mnt/usbstorage/timelapse{timestamp}"
 
     if not os.path.isdir(timelapseDir):
         os.mkdir(timelapseDir)
