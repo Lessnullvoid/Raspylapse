@@ -6,6 +6,10 @@ import picamera
 import datetime
 import argparse
 
+#timestamp para la carpeta de imagenes
+#imagenes en png
+#
+
 def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720),
         quality=85, startTime=None):
     """
@@ -40,7 +44,7 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
     interval = float(captureTimeSec) / movieFrames
     totalPics = int(captureTimeSec / interval)
 
-    timelapseDir = "/home/user/path/to/Raspylapse/generated_images"
+    timelapseDir = "/mnt/usbstorage"
 
     if not os.path.isdir(timelapseDir):
         os.mkdir(timelapseDir)
