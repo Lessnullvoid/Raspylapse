@@ -78,7 +78,7 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
             time.sleep(2)
             startT = time.time()
             print "Capture begin:"
-            for filename in camera.capture_continuous('%s/timelapse{timestamp}.jpeg'% (timelapseDir)):
+            for filename in camera.capture_continuous('%s/timelapse{timestamp}.png'% (timelapseDir)):
                 print('\tCaptured %s' % filename)
                 time.sleep(interval)
                 timeNow = time.time()
