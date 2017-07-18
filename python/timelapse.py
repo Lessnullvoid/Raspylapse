@@ -66,7 +66,7 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
 
     imagesGenerated = 0
 
-    os.system("convert generated_images/*.jpeg -delay 20 -loop 0 html/gif/timelapse.gif")
+    #os.system("convert generated_images/*.jpeg -delay 20 -loop 0 html/gif/timelapse.gif")
 
     try:
         with picamera.PiCamera() as camera:
@@ -87,7 +87,7 @@ def main(captureTime=528.0, movieDuration=60, framerate=30, resolution=(1280,720
                 imagesGenerated=imagesGenerated+1
 
                 if imagesGenerated % 5 == 0 :
-                    os.system("convert generated_images/*.jpeg -delay 20 -loop 0 html/gif/timelapse.gif")
+                    #os.system("convert generated_images/*.jpeg -delay 20 -loop 0 html/gif/timelapse.gif")
 
 
                 if elapsedTime >= captureTimeSec:
