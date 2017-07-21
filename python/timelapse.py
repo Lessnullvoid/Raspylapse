@@ -6,6 +6,7 @@ import picamera
 import datetime
 import argparse
 
+
 #timestamp para la carpeta de imagenes
 #imagenes en png
 #
@@ -78,7 +79,7 @@ def main(captureTime=3600.0, movieDuration=30, framerate=30, resolution=(1280,72
             time.sleep(2)
             startT = time.time()
             print "Capture begin:"
-            for filename in camera.capture_continuous('%s/timelapse{timestamp}.png'% (timelapseDir)):
+            for filename in camera.capture_continuous('%s/timelapse{time}.png'% (timelapseDir)):
                 print('\tCaptured %s' % filename)
                 time.sleep(interval)
                 timeNow = time.time()
