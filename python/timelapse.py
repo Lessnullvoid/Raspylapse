@@ -54,13 +54,10 @@ def main(captureTime=3600.0, movieDuration=30, framerate=30, resolution=(1280,72
 
     if startTime:
         now = datetime.datetime.now()
-        mtime = time.time.mtime()
         print "Will start recording time-lapse on:", startTime
-        print "And the time stamp is:",mtime
         while now < startTime:
             try:
                 now = datetime.datetime.now()
-                mtime = time.time.mtime()
             except KeyboardInterrupt:
                 # User pressed ctrl+c
                 print "Exit via user input"
@@ -82,7 +79,7 @@ def main(captureTime=3600.0, movieDuration=30, framerate=30, resolution=(1280,72
             time.sleep(2)
             startT = time.time()
             print "Capture begin:"
-            for filename in camera.capture_continuous('%s/timelapse{mtime}.png'% (timelapseDir)):
+            for filename in camera.capture_continuous('%s/timelapse{timestamp}.png'% (timelapseDir)):
                 print('\tCaptured %s' % filename)
                 time.sleep(interval)
                 timeNow = time.time()
